@@ -1,4 +1,4 @@
-# zigbee2mqtt_docker_compose
+# zigbee2mqtt docker-compose
 A full Zigbee2MQTT stack including Mosquito in a docker-compose file.
 
 Create the directorys in /home/USER to make it easy to manage:
