@@ -1,3 +1,4 @@
+#Replace USER with your username.
 version: '3.8'
 services:
   zigbee2mqtt:
