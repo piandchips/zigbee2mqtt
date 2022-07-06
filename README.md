@@ -11,7 +11,7 @@ Run ```docker compose up -d``` to bring up the containers and create neccessary 
 
 Stop the containers ```docker compose stop```.
 
-Edit *mosquitto.conf*.
+**Edit ```mosquitto.conf```.**
 ```
 nano /home/alex/mqtt/conf/mosquitto.conf
 ```
