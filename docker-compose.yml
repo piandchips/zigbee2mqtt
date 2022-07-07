@@ -31,7 +31,7 @@ services:
       - 8883:8883
     image: eclipse-mosquitto
     volumes:
-      - /home/USER/mqtt/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - /home/USER/mqtt/mosquitto.conf:/mosquitto/config/mosquitto.conf
       - /home/USER/mqtt/data:/mosquitto/data
       - /home/USER/mqtt/log:/mosquitto/log
     restart: unless-stopped
