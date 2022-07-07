@@ -12,4 +12,4 @@ Next run ```docker compose up -d``` to bring up the containers.
 
 This should have you up and running. (Works for me)
 
-I think the only thing you may need to change your adapter in the Zigbee2MQTT config (ACM0 or USB0).
+I think the only thing you may need to change is your adapter in the Zigbee2MQTT config (ACM0 or USB0).
