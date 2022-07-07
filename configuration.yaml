@@ -1,0 +1,11 @@
+# MQTT settings
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://mqtt:8883
+
+# Serial settings
+serial:
+  port: /dev/ttyACM0
+  
+advanced:
+    network_key: GENERATE
