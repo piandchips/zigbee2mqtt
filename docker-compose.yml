@@ -1,24 +1,37 @@
-#Replace USER with your username.
 version: '3.8'
+
+networks:
+  zigbee2mqtt:
+    driver: bridge
+
 services:
   zigbee2mqtt:
     container_name: zigbee2mqtt_zigbee
     image: koenkk/zigbee2mqtt
+    hostname: zigbee
+    networks:
+      zigbee2mqtt:
+    ports:
+      - 8080:8080
     restart: unless-stopped
     volumes:
       - /home/USER/zigbee:/app/data
       - /run/udev:/run/udev:ro
-    network_mode: "host"
     environment:
       - TZ=Europe/London
     devices:
-      - /dev/ttyUSB0:/dev/ttyACM0
+      - /dev/ttyUSB0:/dev/ttyUSB0
 
   mosquitto:
     container_name: zigbee2mqtt_mqtt
+    hostname: mqtt
+    networks:
+      zigbee2mqtt:
+    ports:
+      - 8883:8883
     image: eclipse-mosquitto
-    network_mode: "host"
     volumes:
-      - /home/USER/mqtt/conf:/mosquitto/conf
+      - /home/USER/mqtt/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
       - /home/USER/mqtt/data:/mosquitto/data
       - /home/USER/mqtt/log:/mosquitto/log
+    restart: unless-stopped
