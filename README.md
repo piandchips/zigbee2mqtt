@@ -1,17 +1,13 @@
 # zigbee2mqtt docker-compose
 A full Zigbee2MQTT stack including Mosquito in a docker-compose file.
-Thanks to @Koenkk for creating such a great bit of code!
 
-Create the directories in /home/USER to make it easy to manage:
-(replace USER with your username)
-```
-mkdir /home/USER/{zigbee,mqtt}
-```
+Thanks to @Koenkk for creating Zigbee2MQTT!
 
-Move ```mosquitto.conf``` into ```/home/USER/mqtt/``` 
+It should be as simple as:
+```git clone https://github.com/Jarvis-1487/zigbee2mqtt_docker-compose.git zigbee2mqtt```
 
-Move ```configuration.yaml``` into ```/home/USER/zigbee/configuration.yaml``` 
+```cd zigbee2mqtt``` 
 
-Run ```docker compose up -d``` to bring up the containers.
+Next run ```docker compose up -d``` to bring up the containers.
 
 This should have you up and running. (Works for me)
