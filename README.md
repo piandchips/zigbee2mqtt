@@ -1,4 +1,4 @@
-# zigbee2mqtt docker-compose
+# Zigbee2MQTT + Mosquitto Docker Compose
 A full Zigbee2MQTT stack including Mosquitto in a docker-compose file.
 
 Thanks to @Koenkk for creating Zigbee2MQTT!
