@@ -2,30 +2,29 @@ version: '3.8'
 
 services:
   zigbee2mqtt:
-    container_name: zigbee2mqtt_zigbee
     image: koenkk/zigbee2mqtt
+    container_name: zigbee2mqtt_zigbee
     hostname: zigbee
+    volumes:
+      - ${root_dir}/zigbee:/app/data
+      - /run/udev:/run/udev:ro
+    environment:
+      - TZ=${timezone}
+    devices:
+      - /dev/${device}:/dev/${device}
     ports:
       - 8080:8080
     restart: unless-stopped
-    volumes:
-      - /home/USER/zigbee2mqtt/zigbee:/app/data
-      - /run/udev:/run/udev:ro
-    environment:
-      - TZ=Europe/London
-    devices:
-      - /dev/ttyUSB0:/dev/ttyUSB0
 
 
   mosquitto:
+    image: eclipse-mosquitto
     container_name: zigbee2mqtt_mqtt
     hostname: mqtt
-
+    volumes:
+      - ${root_dir}/mqtt/config:/mosquitto/config
+      - ${root_dir}/mqtt/data:/mosquitto/data
+      - ${root_dir}/mqtt/log:/mosquitto/log
     ports:
       - 1883:1883
-    image: eclipse-mosquitto
-    volumes:
-      - /home/USER/zigbee2mqtt/mqtt/config:/mosquitto/config
-      - /home/USER/zigbee2mqtt/mqtt/data:/mosquitto/data
-      - /home/USER/zigbee2mqtt/mqtt/log:/mosquitto/log
     restart: unless-stopped
