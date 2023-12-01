@@ -16,7 +16,6 @@ services:
       - 8080:8080
     restart: unless-stopped
 
-
   mosquitto:
     image: eclipse-mosquitto
     container_name: zigbee2mqtt_mqtt
