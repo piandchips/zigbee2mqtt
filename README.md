@@ -13,9 +13,13 @@ cd zigbee2mqtt
 ``` 
 
 ```
+Edit the .env file:
+
+root_dir = /FOLDER/TO/STORE/CONFIGS
+timezone = Europe/London
+device = ttyUSB0
+```
+```
 docker compose up -d
 ```
-
-This should have you up and running. (Works for me)
-
-I think the only thing you may need to change is your adapter in the Zigbee2MQTT config ```port: /dev/ttyACM0``` or ```port: /dev/ttyUSB0```.
+This should get you up and running!
