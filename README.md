@@ -5,7 +5,7 @@ Thanks to @Koenkk for creating Zigbee2MQTT!
 
 It should be as simple as:
 ```
-git clone https://github.com/sknalbsivraj/zigbee2mqtt_docker-compose.git zigbee2mqtt
+git clone https://github.com/homelab-docker/zigbee2mqtt.git zigbee2mqtt
 ```
 
 ```
